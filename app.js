@@ -31,7 +31,7 @@ client.on('message', message => {
         description: '[Invite me to your server](https://discordapp.com/oauth2/authorize?client_id=545069699570860032&scope=bot&permissions=1074089024)'
       }});
     }
-    if (message.content.startsWith('e$add') && message.member.hasPermission('MANAGE_EMOJI')) {
+    if (message.content.startsWith('e$add') && message.member.hasPermission('MANAGE_EMOJIS')) {
         var n = args[0].split(':')[1];
         var emoji = message.guild.emojis.find('name', n);
         if (!emoji) {
@@ -51,7 +51,7 @@ client.on('message', message => {
           }, 1000);
         });
     }
-    if (message.content.startsWith('e$remove') && message.member.hasPermission('MANAGE_EMOJI')) {
+    if (message.content.startsWith('e$remove') && message.member.hasPermission('MANAGE_EMOJIS')) {
         var n = args[0].split(':')[1];
         var emoji = message.guild.emojis.find('name', n);
         if (!emoji) {
