@@ -6,7 +6,6 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-
 client.on('message', message => {
     let args = message.content.split(" ").splice(1);
     let m = message.content.toLowerCase();
@@ -16,10 +15,13 @@ client.on('message', message => {
         title: 'EmojiRestrictBot Help',
         color: 0xf1c40f,
         fields: [
-          {name: 'e$add', value: 'Adds a restricted role.\nUsage: `e$add <:smile:545074099890683914> @Role`'},
-          {name: 'e$remove', value: 'Removes a restricted role.\nUsage: `e$remove <:smile:545074099890683914> @Role`'},
+          {name: 'e$add', value: 'Adds a restricted role.\nUsage: `e$add 😛 @Role`'},
+          {name: 'e$remove', value: 'Removes a restricted role.\nUsage: `e$remove 😛 @Role`'},
           {name: 'e$invite', value: 'Provides you with the bot invite link.\nUsage: `e$invite`'},
         ],
+        footer: {
+          text: 'To add restricted roles you must have the Manage Emojis permission.'
+        },
       }});
     }
     if (message.content.startsWith('e$invite')) {
