@@ -1,6 +1,6 @@
 {
-  "name": "toaster",
-  "description": "A toaster. What do you expect me to say here.",
+  "name": "emojirestrict",
+  "description": "blah",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
