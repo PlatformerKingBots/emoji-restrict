@@ -41,7 +41,7 @@ client.on('message', message => {
     }
     if (message.content.startsWith('e$add') && message.member.hasPermission('MANAGE_EMOJIS')) {
         var n = args[0].split(':')[1];
-        var emoji = message.guild.emojis.find('name', n);
+        var emoji = message.guild.emojis.find(role => role.name == n);
         if (!emoji || !emoji.client || !emoji.guild || !emoji.deletable) {
           message.channel.send(`<:error:487316007040581632> ${message.member}, Invalid emoji.`);
           return;
@@ -61,7 +61,7 @@ client.on('message', message => {
     }
     if (message.content.startsWith('e$remove') && message.member.hasPermission('MANAGE_EMOJIS')) {
         var n = args[0].split(':')[1];
-        var emoji = message.guild.emojis.find('name', n);
+        var emoji = message.guild.emojis.find(role => role.name == n);
         if (!emoji || !emoji.client || !emoji.guild || !emoji.deletable) {
           message.channel.send(`<:error:487316007040581632> ${message.member}, Invalid emoji.`);
           return;
