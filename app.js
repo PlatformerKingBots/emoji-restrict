@@ -46,7 +46,7 @@ client.on('message', message => {
           message.channel.send(`<:error:487316007040581632> ${message.member}, Invalid emoji.`);
           return;
         }
-        var role = message.guild.roles.get(args[2]);
+        var role = message.guild.roles.get(args[1]);
         if (!role) {role = message.mentions.roles.first();}
         if (!role) {
           message.channel.send(`<:error:487316007040581632> ${message.member}, Invalid role.`);
@@ -66,7 +66,7 @@ client.on('message', message => {
           message.channel.send(`<:error:487316007040581632> ${message.member}, Invalid emoji.`);
           return;
         }
-        var role = message.guild.roles.get(args[2]);
+        var role = message.guild.roles.get(args[1]);
         if (!role) {role = message.mentions.roles.first();}
         else if (!role) {
           message.channel.send(`<:error:487316007040581632> ${message.member}, Invalid role.`);
